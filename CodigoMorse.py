@@ -41,6 +41,12 @@ def salvar():
 texto transcrito: 
 {transcrito_morse}''')
 
+def main():
+    morse = transcrever(entrada.get())
+    print(f"Texto: {entrada.get()}")
+    print (f'Morse: {morse}')
+    play_morse(morse)
+
 MORSE_CODE = {
     'A': '.-',    'B': '-...',  'C': '-.-.', 
     'D': '-..',   'E': '.',     'F': '..-.',
@@ -65,13 +71,6 @@ MORSE_CODE = {
     '"': '.-..-.', '$': '...-..-', '@': '.--.-.',
     ' ': '/'  # espaço entre palavras
 }
-
-def main():
-    morse = transcrever(entrada.get())
-    print(f"Texto: {entrada.get()}")
-    print (f'Morse: {morse}')
-    play_morse(morse)
-
 
 janela = ttk.Window(themename='superhero', title='Conversor de texto para código morse', size=(500,200))
 
